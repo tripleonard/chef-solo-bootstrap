@@ -7,17 +7,13 @@
 
 ruby_gems_version=1.3.7
 
-echo ''
-echo '== updating system =='
-echo ''
+# update system
 
 sudo aptitude --quiet --assume-yes update
 sudo aptitude -y install build-essential build-dep git-core ruby ruby-dev libopenssl-ruby irb wget ssl-cert
 
 
-echo ''
-echo '== installing rubygems from source =='
-echo ''
+# install rubygems
 
 cd /tmp
 wget http://production.cf.rubygems.org/rubygems/rubygems-$ruby_gems_version.tgz
@@ -25,15 +21,9 @@ tar zxf rubygems-$ruby_gems_version.tgz
 cd rubygems-$ruby_gems_version
 sudo ruby setup.rb --no-format-executable
 
-echo ''
-echo '== installing chef =='
-echo ''
+#install chef
 
 sudo gem install chef --no-ri --no-rdoc
-
-echo ''
-echo '== creating chef-solo solo.rb file =='
-echo ''
 
 # Add solo.rb for chef-solo
 echo 'file_cache_path "/tmp/chef-solo"
