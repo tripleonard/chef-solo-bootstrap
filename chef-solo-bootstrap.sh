@@ -23,6 +23,7 @@ sudo ruby setup.rb --no-format-executable
 sudo gem install chef --no-ri --no-rdoc
 
 # Add solo.rb for chef-solo
+sudo mkdir /etc/chef
 echo 'file_cache_path "/tmp/chef-solo"
 cookbook_path "/tmp/chef-solo/cookbooks"
 # json_attribs "http://www.example.com/node.json"
