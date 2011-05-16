@@ -8,13 +8,11 @@
 ruby_gems_version=1.3.7
 
 # update system
-
 sudo aptitude --quiet --assume-yes update
 sudo aptitude -y install build-essential build-dep git-core ruby ruby-dev libopenssl-ruby irb wget ssl-cert
 
 
 # install rubygems
-
 cd /tmp
 wget http://production.cf.rubygems.org/rubygems/rubygems-$ruby_gems_version.tgz
 tar zxf rubygems-$ruby_gems_version.tgz
@@ -22,7 +20,6 @@ cd rubygems-$ruby_gems_version
 sudo ruby setup.rb --no-format-executable
 
 #install chef
-
 sudo gem install chef --no-ri --no-rdoc
 
 # Add solo.rb for chef-solo
