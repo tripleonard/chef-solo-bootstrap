@@ -5,7 +5,7 @@
 # cat ~/.ssh/id_rsa.pub | ssh root@YOUR_SLICE_IP_ADDRESS "mkdir -m 0700 -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 0600 ~/.ssh/authorized_keys"
 # ssh root@YOUR_SLICE_IP_ADDRESS "bash < <( curl -L https://github.com/tripleonard/chef-solo-bootstrap/raw/master/chef-solo-bootstrap.sh )"
 
-ruby_gems_version=1.3.7
+ruby_gems_version=1.7.2
 
 # update system
 sudo aptitude --quiet --assume-yes update
