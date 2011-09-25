@@ -19,8 +19,9 @@ tar zxf rubygems-$ruby_gems_version.tgz
 cd rubygems-$ruby_gems_version
 sudo ruby setup.rb --no-format-executable
 
-#install chef
+#install chef and ohai
 sudo gem install chef --no-ri --no-rdoc
+sudo gem install ohai --no-ri --no-rdoc
 
 # Add solo.rb for chef-solo
 sudo mkdir /etc/chef
