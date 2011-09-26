@@ -5,6 +5,8 @@
 # cat ~/.ssh/id_rsa.pub | ssh root@YOUR_SLICE_IP_ADDRESS "mkdir -m 0700 -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 0600 ~/.ssh/authorized_keys"
 # ssh -t root@YOUR_SLICE_IP_ADDRESS "bash < <( curl -L -k https://github.com/tripleonard/chef-solo-bootstrap/raw/master/chef-solo-bootstrap.sh )"
 
+before="$(date +%s)"
+
 ruby_gems_version=1.7.2
 
 # update system
@@ -30,3 +32,7 @@ cookbook_path "/tmp/chef-solo/cookbooks"
 # json_attribs "http://www.example.com/node.json"
 # recipe_url "http://www.example.com/chef-solo.tar.gz"' | sudo tee /etc/chef/solo.rb
 
+after="$(date +%s)"
+elapsed_seconds="$(expr $after - $before)"
+echo Elapsed time for code block: $elapsed_seconds
+echo Elapsed time: $(date -r $elapsed_seconds +%H:%M:%S)
