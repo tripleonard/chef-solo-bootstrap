@@ -29,7 +29,7 @@ sudo gem install ohai --no-ri --no-rdoc
 # Add solo.rb for chef-solo
 sudo mkdir /etc/chef
 echo 'file_cache_path "/tmp/chef-solo"
-cookbook_path "/tmp/chef-solo/cookbooks"
+cookbook_path ["/tmp/chef-solo/cookbooks", "/tmp/chef-solo/site-cookbooks"]
 role_path "/tmp/chef-solo/roles"
 # json_attribs "http://www.example.com/node.json"
 # recipe_url "http://www.example.com/chef-solo.tar.gz"' | sudo tee /etc/chef/solo.rb
