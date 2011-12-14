@@ -9,6 +9,7 @@
 before="$(date +%s)"
 
 ruby_gems_version=1.7.2
+chef_version=0.10.4
 
 # update system
 sudo aptitude --quiet --assume-yes update
@@ -23,7 +24,7 @@ cd rubygems-$ruby_gems_version
 sudo ruby setup.rb --no-format-executable
 
 #install chef and ohai
-sudo gem install chef --no-ri --no-rdoc
+sudo gem install chef -v=$chef_version --no-ri --no-rdoc
 sudo gem install ohai --no-ri --no-rdoc
 
 # Add solo.rb for chef-solo
